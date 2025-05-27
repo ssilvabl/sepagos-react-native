@@ -1,0 +1,42 @@
+// Definir variable para peticiones a la API
+@api = http://localhost:3000/payments
+
+// Petición GET para listar los pagos
+GET {{api}}
+
+// Petición GET para seleccionar un solo elemento
+###
+GET {{api}}/3
+
+// Petición GET para contar todos los elementos que hay
+###
+GET {{api}}/count
+
+// Petición POST para crear un nuevo registro
+// Añadir cabecera para enviar datos - Request body
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+    "usuario_id": 1,
+    "descripcion": "Prueba 4 desde la API",
+    "monto": 1000000,
+    "tipo": "cobro",
+    "fecha": "2025-05-23"
+}
+
+// Petición DELETE para eliminar un elemento
+###
+DELETE {{api}}/3
+
+// Petición PUT para actualizar los datos de un elemento
+###
+PUT {{api}}/1
+Content-Type: application/json
+
+{
+    "descripcion": "primer registro de la API",
+    "monto": 20.000,
+    "tipo": "pago"
+}
